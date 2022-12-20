@@ -1,0 +1,31 @@
+{
+  "name": "swag/shopfront-tags",
+  "description": "Shopfront module to display tags under a dedicated tab within the product details page",
+  "version": "0.0.4",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hector Casanova"
+    }
+  ],
+  "require": {
+    "shopware/core": "6.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Swag\\ShopfrontTags\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Swag\\ShopfrontTags\\SwagShopfrontTags",
+    "label": {
+      "de-DE": "Shopfront-Tags",
+      "en-GB": "Shopfront tags"
+    },
+    "description": {
+      "de-DE": "Schaufenstermodul zur Anzeige von Tags auf einer eigenen Registerkarte auf der Produktdetailseite.",
+      "en-GB": "Shopfront module to display tags under a dedicated tab within the product details page."
+    }
+  }
+}

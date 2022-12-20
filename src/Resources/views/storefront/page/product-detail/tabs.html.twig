@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+
+{# @var page \Shopware\Storefront\Page\Product\ProductPage #}
+{% block page_product_detail_tabs_navigation_review %}
+    {{ parent() }}
+
+    {% if page.extensions.tags | length > 0 %}
+        <li class="nav-item">
+            <a class="nav-link"
+               id="tags-tab"
+               data-toggle="tab"
+               data-offcanvas-tab="true"
+               href="#tags-tab-pane"
+               role="tab"
+               aria-controls="tags-tab-pane"
+               aria-selected="false"
+            >
+                <span>{{ 'swagTags.tabName' | trans }} ({{ page.extensions.tags | length }})</span>
+            </a>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{%  block page_product_detail_tabs_content_review %}
+    {{ parent() }}
+
+    <div class="tab-pane fade"
+         id="tags-tab-pane"
+         role="tabpanel"
+         aria-labelledby="tags-tab"
+    >
+        {% for tag in page.extensions.tags %}
+            <span class="badge badge-light my-1 less-bold">{{ tag.name }}</span>
+        {% endfor %}
+    </div>
+{% endblock %}
